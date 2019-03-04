@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+    sysmaker:
+        build: .
+        image: nthuepl/sysmaker:v0.1
+        stdin_open: true
+        tty: true
+        container_name: sysmaker
+        volumes:
+            - project_folder:/SysMaker
+
+volumes:
+    project_folder:
+        driver: local
+        driver_opts:
+            type: 'none'
+            o: 'bind'
+            device: '/home/ls/Desktop/docker/SysMaker/project_folder'
